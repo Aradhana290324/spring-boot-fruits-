@@ -1,0 +1,230 @@
+package com.GuruFruit.entity;
+
+import java.util.List;
+
+import jakarta.persistence.*;
+
+import jakarta.validation.constraints.NotBlank;
+
+@Entity
+@Table(name = "orders")
+
+public class OrderData {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+    private Long id;
+
+    // CUSTOMER NAME
+
+    @NotBlank(message = "Customer Name Required")
+
+    private String customerName;
+
+    // MOBILE
+
+    @NotBlank(message = "Mobile Number Required")
+
+    private String mobile;
+
+    // TOTAL
+
+    private Double totalAmount;
+
+    // ADDRESS
+
+    @NotBlank(message = "Address Required")
+
+    private String address;
+
+    // LANDMARK
+
+    @NotBlank(message = "Landmark Required")
+
+    private String landmark;
+
+    // PINCODE
+
+    @NotBlank(message = "Pincode Required")
+
+    private String pincode;
+
+    // PAYMENT
+
+    @NotBlank(message = "Payment Method Required")
+
+    private String paymentMethod;
+
+    // STATUS
+
+    @NotBlank(message = "Order Status Required")
+
+    private String orderStatus;
+
+    // ORDER ITEMS
+
+    @OneToMany(cascade = CascadeType.ALL)
+
+    @JoinColumn(name = "order_id")
+
+    private List<OrderItem> items;
+
+    // GETTERS & SETTERS
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    // CUSTOMER NAME
+
+    public String getCustomerName() {
+        return customerName;
+    }
+
+    public void setCustomerName(String customerName) {
+        this.customerName = customerName;
+    }
+
+    // MOBILE
+
+    public String getMobile() {
+        return mobile;
+    }
+
+    public void setMobile(String mobile) {
+        this.mobile = mobile;
+    }
+
+    // TOTAL
+
+    public Double getTotalAmount() {
+        return totalAmount;
+    }
+
+    public void setTotalAmount(Double totalAmount) {
+        this.totalAmount = totalAmount;
+    }
+
+    // ADDRESS
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    // LANDMARK
+
+    public String getLandmark() {
+        return landmark;
+    }
+
+    public void setLandmark(String landmark) {
+        this.landmark = landmark;
+    }
+
+    // PINCODE
+
+    public String getPincode() {
+        return pincode;
+    }
+
+    public void setPincode(String pincode) {
+        this.pincode = pincode;
+    }
+
+    // PAYMENT
+
+    public String getPaymentMethod() {
+        return paymentMethod;
+    }
+
+    public void setPaymentMethod(String paymentMethod) {
+        this.paymentMethod = paymentMethod;
+    }
+
+    // STATUS
+
+    public String getOrderStatus() {
+        return orderStatus;
+    }
+
+    public void setOrderStatus(String orderStatus) {
+        this.orderStatus = orderStatus;
+    }
+
+    // ITEMS
+
+    public List<OrderItem> getItems() {
+        return items;
+    }
+
+    public void setItems(List<OrderItem> items) {
+        this.items = items;
+    }
+    
+ // CUSTOMER ID
+ private Long customerId;
+
+ // DELIVERY DATE
+ private String deliveryDate;
+
+ // DELIVERY TIME SLOT
+ private String deliveryTime;
+
+ // CUSTOMER SPECIAL NOTE
+ @Column(length = 1000)
+ private String customerNote;
+
+ // ORDER PRIORITY
+ private String priority;
+
+public Long getCustomerId() {
+	return customerId;
+}
+
+public void setCustomerId(Long customerId) {
+	this.customerId = customerId;
+}
+
+public String getDeliveryDate() {
+	return deliveryDate;
+}
+
+public void setDeliveryDate(String deliveryDate) {
+	this.deliveryDate = deliveryDate;
+}
+
+public String getDeliveryTime() {
+	return deliveryTime;
+}
+
+public void setDeliveryTime(String deliveryTime) {
+	this.deliveryTime = deliveryTime;
+}
+
+public String getCustomerNote() {
+	return customerNote;
+}
+
+public void setCustomerNote(String customerNote) {
+	this.customerNote = customerNote;
+}
+
+public String getPriority() {
+	return priority;
+}
+
+public void setPriority(String priority) {
+	this.priority = priority;
+}
+ 
+
+}

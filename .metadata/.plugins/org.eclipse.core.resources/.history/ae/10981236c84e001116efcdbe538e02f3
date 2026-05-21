@@ -1,0 +1,137 @@
+//package com.GuruFruit.controller;
+//
+//import java.util.List;
+//
+//import org.springframework.beans.factory.annotation.Autowired;
+//import org.springframework.web.bind.annotation.*;
+//
+//import com.GuruFruit.entity.Fruits;
+//import com.GuruFruit.repository.FruitRepository;
+//
+//@RestController
+//@RequestMapping("/api/fruits")
+//@CrossOrigin("*")
+//public class FruitController {
+//
+//    @Autowired
+//    private FruitRepository fruitRepository;
+//
+//    @GetMapping
+//    public List<Fruits> getAllFruits() {
+//        return fruitRepository.findAll();
+//    }
+//
+//    @PostMapping
+//    public Fruits addFruit(@RequestBody Fruits fruit) {
+//        return fruitRepository.save(fruit);
+//    }
+//    
+//    @PutMapping("/{id}")
+//    public Fruits updateFruit(
+//            @PathVariable Long id,
+//            @RequestBody Fruits fruit) {
+//
+//        Fruits existingFruit = fruitRepository.findById(id).orElse(null);
+//
+//        if (existingFruit != null) {
+//
+//            existingFruit.setName(fruit.getName());
+//            existingFruit.setPrice(fruit.getPrice());
+//            existingFruit.setUnit(fruit.getUnit());
+//            existingFruit.setStock(fruit.getStock());
+//
+//            return fruitRepository.save(existingFruit);
+//        }
+//
+//        return null;
+//    }
+//    @DeleteMapping("/{id}")
+//    public String deleteFruit(@PathVariable Long id) {
+//
+//        fruitRepository.deleteById(id);
+//
+//        return "Fruit Deleted Successfully";
+//    }
+//}
+package com.GuruFruit.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import com.GuruFruit.entity.Fruits;
+import com.GuruFruit.repository.FruitRepository;
+
+@RestController
+@RequestMapping("/api/fruits")
+@CrossOrigin("*")
+public class FruitController {
+
+    @Autowired
+    private FruitRepository fruitRepository;
+
+    // GET ALL FRUITS
+
+    @GetMapping
+    public List<Fruits> getAllFruits() {
+
+        return fruitRepository.findAll();
+    }
+
+
+    // ADD NEW FRUIT
+
+    @PostMapping
+    public Fruits addFruit(
+            @RequestBody Fruits fruit
+    ) {
+
+        return fruitRepository.save(fruit);
+    }
+
+
+    // UPDATE FRUIT
+
+    @PutMapping("/{id}")
+    public Fruits updateFruit(
+
+            @PathVariable Long id,
+
+            @RequestBody Fruits updatedFruit
+    ) {
+
+        Fruits existingFruit = fruitRepository
+                .findById(id)
+
+                .orElseThrow(() ->
+                        new RuntimeException(
+                                "Fruit Not Found With ID : " + id
+                        )
+                );
+
+        existingFruit.setName(updatedFruit.getName());
+
+        existingFruit.setPrice(updatedFruit.getPrice());
+
+        existingFruit.setUnit(updatedFruit.getUnit());
+
+        existingFruit.setStock(updatedFruit.getStock());
+
+        return fruitRepository.save(existingFruit);
+    }
+
+
+    // DELETE FRUIT
+
+    @DeleteMapping("/{id}")
+    public String deleteFruit(
+            @PathVariable Long id
+    ) {
+
+        fruitRepository.deleteById(id);
+
+        return "Fruit Deleted Successfully";
+    }
+
+}
