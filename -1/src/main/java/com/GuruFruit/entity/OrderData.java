@@ -1,5 +1,6 @@
 package com.GuruFruit.entity;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 import jakarta.persistence.*;
@@ -17,11 +18,19 @@ public class OrderData {
     private Long id;
     
  private Long customerId;
-
+ private LocalDateTime orderDate;
  // DELIVERY DATE
  private String deliveryDate;
 
- // DELIVERY TIME SLOT
+ public LocalDateTime getOrderDate() {
+	return orderDate;
+}
+
+public void setOrderDate(LocalDateTime orderDate) {
+	this.orderDate = orderDate;
+}
+
+// DELIVERY TIME SLOT
  private String deliveryTime;
 
  // CUSTOMER SPECIAL NOTE

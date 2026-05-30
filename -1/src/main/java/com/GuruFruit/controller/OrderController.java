@@ -1,5 +1,6 @@
 package com.GuruFruit.controller;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,8 +25,13 @@ public class OrderController {
     public OrderData saveOrder(@Valid @RequestBody OrderData order) {
 
         order.setOrderStatus("Pending"); // default fix
+        
 
+            order.setOrderDate(
+                LocalDateTime.now()
+            );
         return orderRepository.save(order);
+        
     }
     @PutMapping("/cancel/{id}")
 
@@ -41,6 +47,7 @@ public class OrderController {
 
         return orderRepository.save(order);
     }
+    
 
     // GET ALL ORDERS
     @GetMapping
@@ -71,6 +78,7 @@ public class OrderController {
                         mobile
                 );
     }
+    
     
     
 }

@@ -1,0 +1,81 @@
+package com.GuruFruit.controller;
+
+import java.time.LocalDateTime;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import org.springframework.web.bind.annotation.*;
+
+import jakarta.validation.Valid;
+
+import com.GuruFruit.entity.OrderData;
+
+import com.GuruFruit.repository.OrderRepository;
+@RestController
+@RequestMapping("/api/orders")
+@CrossOrigin("*")
+public class OrderController {
+
+    @Autowired
+    private OrderRepository orderRepository;
+
+    // SAVE ORDER
+    @PostMapping
+    public OrderData saveOrder(@Valid @RequestBody OrderData order) {
+
+        order.setOrderStatus("Pending"); // default fix
+
+        return orderRepository.save(order);
+        order.setOrderDate(
+                LocalDateTime.now());
+    }
+    @PutMapping("/cancel/{id}")
+
+    public OrderData cancelOrder(
+            @PathVariable Long id
+    ) {
+
+        OrderData order =
+                orderRepository.findById(id)
+                .orElseThrow();
+
+        order.setOrderStatus("Cancelled");
+
+        return orderRepository.save(order);
+    }
+    
+
+    // GET ALL ORDERS
+    @GetMapping
+    public List<OrderData> getOrders() {
+        return orderRepository.findAll();
+    }
+
+    // UPDATE STATUS
+    @PutMapping("/{id}")
+    public OrderData updateStatus(
+            @PathVariable Long id,
+            @RequestBody OrderData updatedOrder) {
+
+        return orderRepository.findById(id)
+                .map(order -> {
+                    order.setOrderStatus(updatedOrder.getOrderStatus());
+                    return orderRepository.save(order);
+                })
+                .orElseThrow(() -> new RuntimeException("Order not found"));
+    }
+    @GetMapping("/mobile/{mobile}")
+    public List<OrderData> getOrdersByMobile(
+            @PathVariable String mobile
+    ) {
+
+        return orderRepository
+                .findByMobileOrderByIdDesc(
+                        mobile
+                );
+    }
+    
+    
+    
+}

@@ -89,4 +89,51 @@ public class CustomerController {
 
         return customer.orElse(null);
     }
+    @PutMapping("/{mobile}")
+    public Customer updateCustomer(
+            @PathVariable String mobile,
+            @RequestBody Customer updatedCustomer
+    ) {
+
+        Optional<Customer> existingCustomer =
+                customerRepository.findByMobile(mobile);
+
+        if (existingCustomer.isPresent()) {
+
+            Customer customer =
+                    existingCustomer.get();
+
+            customer.setName(
+                    updatedCustomer.getName()
+            );
+
+            customer.setAddress(
+                    updatedCustomer.getAddress()
+            );
+
+            customer.setLandmark(
+                    updatedCustomer.getLandmark()
+            );
+
+            customer.setPincode(
+                    updatedCustomer.getPincode()
+            );
+
+            customer.setCity(
+                    updatedCustomer.getCity()
+            );
+
+            customer.setBuildingNumber(
+                    updatedCustomer.getBuildingNumber()
+            );
+
+            customer.setNotes(
+                    updatedCustomer.getNotes()
+            );
+
+            return customerRepository.save(customer);
+        }
+
+        return null;
+    }
 }
