@@ -10004,3 +10004,57 @@ org.apache.maven.project.ProjectBuildingException: Some problems were encountere
 
 !ENTRY org.eclipse.lsp4e 4 0 2026-05-30 13:10:11.973
 !MESSAGE 13:10:11.847 [pool-2-thread-10] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: end work on AST for file:///C:/Fruits%20Shop/-1/src/main/java/com/GuruFruit/controller/CustomerController.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-05-30 13:17:57.541
+!MESSAGE 13:17:54.671 [pool-2-thread-15] INFO  o.s.i.v.c.l.u.SimpleTextDocumentService - hover computation done in 0ms
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-05-30 13:18:08.577
+!MESSAGE 13:18:08.576 [pool-2-thread-15] INFO  o.s.i.v.c.l.c.VscodeCompletionEngineAdapter - Starting completion handling for: file:///C:/Fruits%20Shop/-1/pom.xml
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-05-30 13:18:08.878
+!MESSAGE 13:18:08.859 [pool-13-thread-1] INFO  o.s.i.v.c.l.u.SimpleTextDocumentService - change arrived: 19
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-05-30 13:18:09.028
+!MESSAGE 13:18:09.022 [pool-13-thread-1] INFO  o.s.i.v.c.l.u.SimpleTextDocumentService - change message work done in 1ms
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-05-30 13:18:09.185
+!MESSAGE 13:18:09.173 [pool-13-thread-1] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Invalidate AST for file:///C:/Fruits%20Shop/-1/pom.xml
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-05-30 13:18:12.941
+!MESSAGE 13:18:12.932 [pool-13-thread-1] INFO  o.s.i.v.c.l.u.SimpleTextDocumentService - completion request arrived: file:///C:/Fruits%20Shop/-1/pom.xml
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-05-30 13:18:16.333
+!MESSAGE 13:18:14.718 [Simple-Language-Server main thread] INFO  o.s.i.v.c.l.u.SimpleWorkspaceService - file changed event: [file:///C:/Fruits%20Shop/-1/pom.xml]
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-05-30 13:18:21.005
+!MESSAGE 13:18:20.913 [Reconciler-1] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: work item submitted for doc file:///C:/Fruits%20Shop/-1/src/main/java/com/GuruFruit/controller/CustomerController.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-05-30 13:18:21.138
+!MESSAGE 13:18:21.136 [pool-5-thread-1] INFO  o.s.i.v.b.j.utils.SpringIndexerJava - reconciling stats - timer: 541
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-05-30 13:18:22.000
+!MESSAGE 13:18:21.998 [pool-4-thread-3] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Finished parsing CU for file:///C:/Fruits%20Shop/-1/src/main/java/com/GuruFruit/controller/CustomerController.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-05-30 13:18:22.005
+!MESSAGE 13:18:22.005 [pool-2-thread-18] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: end work on AST for file:///C:/Fruits%20Shop/-1/src/main/java/com/GuruFruit/controller/CustomerController.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-05-30 13:18:22.045
+!MESSAGE 13:18:22.043 [Reconciler-1] INFO  o.s.i.v.b.j.r.JdtReconciler - reconciling (JDT): file:///C:/Fruits%20Shop/-1/src/main/java/com/GuruFruit/controller/CustomerController.java done in 1133ms
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-05-30 13:18:22.297
+!MESSAGE 13:18:22.296 [Reconciler-1] INFO  o.s.i.v.b.m.SpringPropertiesIndexManager - Indexing Spring Boot Properties for -1 DONE
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-05-30 13:18:25.294
+!MESSAGE 13:18:23.143 [pool-5-thread-1] INFO  o.s.i.v.b.j.u.SpringFactoriesIndexer - scan factories files for symbols for project: -1 - no. of files: 0
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-05-30 13:18:27.724
+!MESSAGE 13:18:27.513 [pool-13-thread-1] INFO  o.s.i.v.c.l.u.SimpleTextDocumentService - change arrived: 33
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-05-30 13:18:27.765
+!MESSAGE 13:18:27.736 [Reconciler-1] INFO  o.s.i.v.b.m.SpringPropertiesIndexManager - Indexed 704 properties.
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-05-30 13:18:28.103
+!MESSAGE 13:18:28.102 [Reconciler-1] INFO  o.s.i.v.b.j.r.JdtReconciler - reconciling (JDT): file:///C:/Fruits%20Shop/-1/src/main/java/com/GuruFruit/controller/CustomerController.java done in 338ms
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-05-30 13:18:32.746
+!MESSAGE 13:18:32.744 [Simple-Language-Server main thread] INFO  o.s.i.v.c.l.u.SimpleWorkspaceService - file changed event: [file:///C:/Fruits%20Shop/-1/target/classes/META-INF/maven/com.TheGuruFruits/TheGuruFruits/pom.properties, file:///C:/Fruits%20Shop/-1/target/classes/META-INF/maven/com.TheGuruFruits/TheGuruFruits/pom.xml]
