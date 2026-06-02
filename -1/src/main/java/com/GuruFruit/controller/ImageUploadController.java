@@ -213,7 +213,7 @@ public class ImageUploadController {
             Files.write(path, file.getBytes());
 
             String imageUrl =
-                    "https://spring-boot-fruits-production.up.railway.app/uploads/"
+                    "httpss://spring-boot-fruits-production.up.railway.app/uploads/"
                             + fileName;
 
             return ResponseEntity.ok(imageUrl);
